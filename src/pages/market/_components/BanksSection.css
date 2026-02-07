@@ -1,0 +1,44 @@
+.banks-section {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: var(--text-main);
+}
+
+.section-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin: 0 0 1.5rem 0;
+}
+
+.banks-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .banks-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .banks-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,53 @@
+{
+  "balance": 170.34270000000015,
+  "assets": [
+    {
+      "symbol": "BTC-EUR",
+      "amount": 0.1,
+      "avgPrice": 55910.473,
+      "totalInvested": 5591.0473
+    },
+    {
+      "symbol": "AAPL",
+      "amount": 1,
+      "avgPrice": 275.91,
+      "totalInvested": 275.91
+    },
+    {
+      "symbol": "NKE",
+      "amount": 1,
+      "avgPrice": 62.7,
+      "totalInvested": 62.7
+    },
+    {
+      "symbol": "BIG_DEP",
+      "amount": 4000,
+      "avgPrice": 1,
+      "totalInvested": 4000
+    }
+  ],
+  "transactions": [
+    {
+      "id": "hjtknvfim",
+      "type": "buy",
+      "symbol": "BIG_DEP",
+      "name": "Banco BiG",
+      "amount": 4000,
+      "price": 1,
+      "total": 4000,
+      "date": "2026-02-06T10:45:17.181Z",
+      "timestamp": 1770374717181
+    },
+    {
+      "id": "uhygtf73c",
+      "type": "deposit",
+      "symbol": "EUR",
+      "name": "EUR",
+      "amount": 100,
+      "price": 1,
+      "total": 100,
+      "date": "2026-02-06T10:43:05.700Z",
+      "timestamp": 1770374585700
+    }
+  ]
+}

@@ -1,0 +1,285 @@
+:root {
+  /* Dynamic HSL Palette for Real-time adjustments */
+  --hue-bg: 220;
+  /* Midnight Blue Base */
+  --hue-primary: 150;
+  /* Cyber Green */
+  --hue-danger: 350;
+  /* Radical Red */
+  --hue-accent: 210;
+  /* Tech Blue */
+
+  /* Deep Glass Theme Colors */
+  --bg-app: hsl(var(--hue-bg), 30%, 6%);
+  --bg-glass: hsla(var(--hue-bg), 25%, 10%, 0.75);
+  --bg-glass-hover: hsla(var(--hue-bg), 25%, 15%, 0.85);
+  --bg-glass-strong: hsla(var(--hue-bg), 25%, 8%, 0.95);
+
+  --border-glass: hsla(var(--hue-bg), 20%, 40%, 0.15);
+  --border-glass-light: hsla(var(--hue-bg), 20%, 60%, 0.25);
+
+  /* Semantic Colors */
+  --primary-glow: hsla(var(--hue-primary), 100%, 70%, 0.4);
+  --primary: hsl(var(--hue-primary), 100%, 47%);
+  --danger-glow: hsla(var(--hue-danger), 100%, 70%, 0.4);
+  --danger: hsl(var(--hue-danger), 100%, 63%);
+  --accent: hsl(var(--hue-accent), 90%, 60%);
+
+  /* Text Colors */
+  --text-main: hsla(0, 0%, 100%, 0.95);
+  --text-dim: hsla(0, 0%, 100%, 0.5);
+  --text-muted: hsla(0, 0%, 100%, 0.3);
+
+  /* Spacing & Layout */
+  --glass-blur: 16px;
+  --header-height: 70px;
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --radius-sm: 6px;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+  --glow-text: 0 0 10px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  background-image:
+    radial-gradient(circle at 10% 20%, hsla(var(--hue-accent), 40%, 20%, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, hsla(var(--hue-danger), 40%, 10%, 0.1) 0%, transparent 40%);
+  min-height: 100vh;
+  overflow: hidden;
+  /* App-like feel */
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-glass);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-glass-light);
+}
+
+/* Utilities */
+.glass-panel {
+  background: var(--bg-glass);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.glass-panel:hover {
+  border-color: var(--border-glass-light);
+  box-shadow: var(--shadow-lg);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #fff 0%, var(--text-dim) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-mono {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  letter-spacing: -0.05em;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animations */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 0 0 var(--primary-glow);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+/* Animations */
+.animate-enter {
+  animation: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Data Colors */
+.text-success {
+  color: var(--primary);
+  text-shadow: 0 0 20px var(--primary-glow);
+}
+
+.text-danger {
+  color: var(--danger);
+  text-shadow: 0 0 20px var(--danger-glow);
+}
+
+/* Button Styles Overrides */
+button {
+  font-family: inherit;
+}
+
+/* App Layout */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 16px;
+  gap: 16px;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  height: var(--header-height);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 100;
+}
+
+.dashboard-main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  min-height: 0;
+}
+
+/* Market Section */
+.market-scroll-area {
+  overflow-y: auto;
+  padding-right: 8px;
+  height: 100%;
+}
+
+.assets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  padding-bottom: 24px;
+}
+
+/* Sidebar */
+.sidebar-panel {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .dashboard-main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-panel {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-shell {
+    padding-bottom: calc(60px + env(safe-area-inset-bottom));
+  }
+
+  .dashboard-header {
+    height: auto !important;
+    min-height: 60px;
+    z-index: 100 !important;
+  }
+
+  .content-wrapper {
+    padding: 12px !important;
+  }
+
+  /* Reduce glass-panel padding on mobile */
+  .glass-panel {
+    padding: 12px !important;
+  }
+
+  /* Remove outer glass-panel on mobile to avoid nested padding */
+  .market-scroll-area {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  .mobile-only-nav {
+    display: block !important;
+  }
+}
+
+.mobile-only-nav {
+  display: none;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  padding: 24px;
+}
+
+/* Skeleton Loading */
+@keyframes skeleton-pulse {
+  0% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.skeleton-pulse {
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}

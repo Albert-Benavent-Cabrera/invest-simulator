@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Script to launch the development server on port 3005
+echo "🚀 Lanzando entorno de desarrollo en el puerto 3005..."
+
+# Ensure dependencies are installed (optional but recommended for a launch script)
+# npm install
+
+# Run the dev command
+npm run dev

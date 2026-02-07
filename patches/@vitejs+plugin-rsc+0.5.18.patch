@@ -1,0 +1,78 @@
+diff --git a/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.browser.development.js b/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.browser.development.js
+index 9dd5075..9d3ae7e 100644
+--- a/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.browser.development.js
++++ b/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.browser.development.js
+@@ -355,7 +355,7 @@
+                 });
+                 break;
+               case "stylesheet":
+-                preload(srcSet, "stylesheet", {
++                preload(srcSet, "style", {
+                   crossOrigin: props.crossOrigin,
+                   integrity: props.integrity,
+                   nonce: props.nonce,
+diff --git a/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.browser.production.js b/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.browser.production.js
+index 5f030b2..aef2e59 100644
+--- a/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.browser.production.js
++++ b/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.browser.production.js
+@@ -466,7 +466,7 @@ function getChildFormatContext(parentContext, type, props) {
+             });
+             break;
+           case "stylesheet":
+-            preload(srcSet, "stylesheet", {
++            preload(srcSet, "style", {
+               crossOrigin: props.crossOrigin,
+               integrity: props.integrity,
+               nonce: props.nonce,
+diff --git a/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.edge.development.js b/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.edge.development.js
+index 3f1e976..617b1b8 100644
+--- a/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.edge.development.js
++++ b/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.edge.development.js
+@@ -359,7 +359,7 @@
+                 });
+                 break;
+               case "stylesheet":
+-                preload(srcSet, "stylesheet", {
++                preload(srcSet, "style", {
+                   crossOrigin: props.crossOrigin,
+                   integrity: props.integrity,
+                   nonce: props.nonce,
+diff --git a/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.edge.production.js b/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.edge.production.js
+index 07d9764..3d45a9a 100644
+--- a/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.edge.production.js
++++ b/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.edge.production.js
+@@ -476,7 +476,7 @@ function getChildFormatContext(parentContext, type, props) {
+             });
+             break;
+           case "stylesheet":
+-            preload(srcSet, "stylesheet", {
++            preload(srcSet, "style", {
+               crossOrigin: props.crossOrigin,
+               integrity: props.integrity,
+               nonce: props.nonce,
+diff --git a/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.node.development.js b/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.node.development.js
+index 246fd45..f165f25 100644
+--- a/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.node.development.js
++++ b/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.node.development.js
+@@ -388,7 +388,7 @@
+                 });
+                 break;
+               case "stylesheet":
+-                preload(srcSet, "stylesheet", {
++                preload(srcSet, "style", {
+                   crossOrigin: props.crossOrigin,
+                   integrity: props.integrity,
+                   nonce: props.nonce,
+diff --git a/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.node.production.js b/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.node.production.js
+index 150a65c..ff01037 100644
+--- a/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.node.production.js
++++ b/node_modules/@vitejs/plugin-rsc/dist/vendor/react-server-dom/cjs/react-server-dom-webpack-server.node.production.js
+@@ -503,7 +503,7 @@ function getChildFormatContext(parentContext, type, props) {
+             });
+             break;
+           case "stylesheet":
+-            preload(srcSet, "stylesheet", {
++            preload(srcSet, "style", {
+               crossOrigin: props.crossOrigin,
+               integrity: props.integrity,
+               nonce: props.nonce,

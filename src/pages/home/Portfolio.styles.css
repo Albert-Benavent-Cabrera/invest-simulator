@@ -1,0 +1,239 @@
+/* Charts Container */
+.charts-container {
+  display: flex;
+  gap: 16px;
+  height: 300px;
+}
+
+@media (max-width: 768px) {
+  .charts-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .charts-container>div {
+    height: 250px !important;
+  }
+
+  .charts-row {
+    flex-direction: column !important;
+    height: auto !important;
+  }
+
+  .charts-row>div {
+    height: 250px !important;
+    flex: none !important;
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+}
+
+/* Summary Cards */
+.user-panel__summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.summary-card__label {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.summary-card__value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.summary-card__value small {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.summary-card--highlight {
+  padding: 0.75rem;
+  border-radius: 8px;
+}
+
+.summary-card--profit {
+  background: rgba(126, 231, 135, 0.1);
+}
+
+.summary-card--profit .summary-card__value {
+  color: #7ee787;
+}
+
+.summary-card--loss {
+  background: rgba(248, 81, 73, 0.1);
+}
+
+.summary-card--loss .summary-card__value {
+  color: #f85149;
+}
+
+/* Tabs */
+.user-panel__tabs {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.tab-btn {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-btn:hover {
+  background: var(--bg-primary);
+  color: var(--text-main);
+}
+
+.tab-btn--active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+/* Content */
+.user-panel__content {
+  flex: 1;
+  padding: 1.25rem 1.5rem;
+}
+
+/* Transactions List */
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.transactions-empty,
+.chart-empty {
+  text-align: center;
+  color: var(--text-dim);
+  padding: 3rem 1rem;
+  font-size: 0.9rem;
+}
+
+.transaction-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-tertiary);
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  align-items: center;
+}
+
+.transaction-row--buy {
+  border-left-color: #7ee787;
+}
+
+.transaction-row--sell {
+  border-left-color: #f85149;
+}
+
+.transaction-row__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.transaction-row__type {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.transaction-row__name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.transaction-row__details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.transaction-row__units {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.transaction-row__total {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.transaction-row--buy .transaction-row__total {
+  color: #7ee787;
+}
+
+.transaction-row--sell .transaction-row__total {
+  color: #f85149;
+}
+
+.transaction-row__date {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.chart-container {
+  background: var(--bg-tertiary);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .user-panel__summary {
+    grid-template-columns: 1fr;
+  }
+
+  .transaction-row {
+    grid-template-columns: 1fr auto;
+  }
+
+  .transaction-row__date {
+    grid-column: 1 / -1;
+    text-align: left;
+    margin-top: 0.25rem;
+  }
+
+  .user-panel__content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    max-height: calc(100vh - 300px);
+  }
+
+  .chart-container {
+    overflow-x: auto;
+  }
+}

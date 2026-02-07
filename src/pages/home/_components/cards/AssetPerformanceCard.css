@@ -1,0 +1,165 @@
+.asset-performance-card {
+    position: relative;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+.asset-performance-card.clickable {
+    cursor: pointer;
+}
+
+.asset-performance-card.clickable:hover {
+    transform: translateY(-4px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Header Section */
+.asset-performance-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.asset-performance-card__info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    flex: 1;
+}
+
+.asset-performance-card__name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: -0.01em;
+}
+
+.asset-performance-card__symbol {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+}
+
+.asset-performance-card__price-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.asset-performance-card__current-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+.asset-performance-card__profit-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.asset-performance-card__profit-badge.profit {
+    background: rgba(46, 160, 67, 0.15);
+    color: #3fb950;
+}
+
+.asset-performance-card__profit-badge.loss {
+    background: rgba(248, 81, 73, 0.15);
+    color: #f85149;
+}
+
+/* Chart Section */
+.asset-performance-card__chart {
+    height: 60px;
+    width: 100%;
+    margin: 4px 0;
+    opacity: 0.8;
+    position: relative;
+}
+
+/* Footer / Metrics Section */
+.asset-performance-card__metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.asset-performance-card__metric {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.asset-performance-card__metric.full-width {
+    grid-column: 1 / -1;
+}
+
+.asset-performance-card__metric-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.5;
+}
+
+.asset-performance-card__metric-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+    font-variant-numeric: tabular-nums;
+}
+
+.asset-performance-card__metric-value--profit {
+    color: #3fb950;
+}
+
+.asset-performance-card__metric-value--loss {
+    color: #f85149;
+}
+
+.asset-performance-card__metric-value--large {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+/* Responsive Fixes */
+@media (max-width: 480px) {
+    .asset-performance-card {
+        padding: 16px;
+    }
+
+    .asset-performance-card__current-price {
+        font-size: 1rem;
+    }
+
+    .asset-performance-card__metric-value--large {
+        font-size: 1.1rem;
+    }
+}
